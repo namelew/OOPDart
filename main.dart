@@ -25,3 +25,44 @@ class Fruta {
     }
   }
 }
+
+class Alimento {
+  String name;
+  double weight;
+  String color;
+
+  Alimento(this.name, this.weight, this.color);
+}
+
+class Legumes {
+  String name;
+  double weight;
+  String color;
+  bool isNeedToCook;
+
+  Legumes(this.name, this.weight, this.color, this.isNeedToCook);
+}
+
+class Citricas {
+  String name;
+  double weight;
+  String color;
+  String taste;
+  int poolDays;
+  bool? isMature;
+  double dryLevel;
+
+  Citricas(this.name, this.weight, this.color,this.taste, this.poolDays, this.dryLevel, {this.isMature});
+}
+
+class Nozes {
+  String name;
+  double weight;
+  String color;
+  String taste;
+  int poolDays;
+  bool? isMature;
+  double naturalOilPercent;
+
+  Nozes(this.name, this.weight, this.color,this.taste, this.poolDays, this.naturalOilPercent, {this.isMature});
+}
