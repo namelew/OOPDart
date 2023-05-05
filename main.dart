@@ -9,7 +9,7 @@ void main(List<String> args) {
   mostrarMadura(name, poolDays, color: color);
 }
 
-void mostrarMadura(String name, int days, {String color = "Sem cor"}) {
+void mostrarMadura(String name, int days, {required String color}) {
   if (funcEstaMadura(days)) {
     print("A $name está madura");
   } else {
