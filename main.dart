@@ -53,26 +53,22 @@ class Legumes extends Alimento{
   }
 }
 
-class Citricas {
-  String name;
-  double weight;
-  String color;
-  String taste;
-  int poolDays;
-  bool? isMature;
+class Citricas extends Fruta{
   double dryLevel;
 
-  Citricas(this.name, this.weight, this.color,this.taste, this.poolDays, this.dryLevel, {this.isMature});
+  Citricas(String name, double weight, String color, String taste, int poolDays, this.dryLevel, {bool? isMature}) : super(name, weight, color, taste, poolDays, isMature: isMature);
+
+  void existRefri(bool exist) {
+    if (exist) {
+      print("Existe refrigerante de $name");
+    } else {
+      print("Não existe refri de $name");
+    }
+  }
 }
 
-class Nozes {
-  String name;
-  double weight;
-  String color;
-  String taste;
-  int poolDays;
-  bool? isMature;
+class Nozes extends Fruta{
   double naturalOilPercent;
 
-  Nozes(this.name, this.weight, this.color,this.taste, this.poolDays, this.naturalOilPercent, {this.isMature});
+  Nozes(String name, double weight, String color, String taste, int poolDays, this.naturalOilPercent, {bool? isMature}) : super(name, weight, color, taste, poolDays, isMature: isMature);
 }
