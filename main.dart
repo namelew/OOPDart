@@ -4,11 +4,9 @@ void main(List<String> args) {
   String color = "Verde e Amarela";
   String taste = "Doce e cítrica";
   int poolDays = 40;
-  bool isMature;
+  bool isMature = funcEstaMadura(poolDays);
+}
 
-  if (poolDays >= 30) {
-    isMature = true;
-  } {
-    isMature = false;
-  }
+bool funcEstaMadura(int days) {
+  return days >= 30;
 }
