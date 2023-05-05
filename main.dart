@@ -1,14 +1,10 @@
 void main(List<String> args) {
-  String name = "Laranja";
-  double weight = 100.2;
-  String color = "Verde e Amarela";
-  String taste = "Doce e cítrica";
-  int poolDays = 20;
-  bool isMature = funcEstaMadura(poolDays);
+  Fruta f1 = Fruta("Laranja", 100.2, "Verde e Amarela", "Doce e cítrica", 20);
+  Fruta f2 = Fruta("Uva", 40, "Roxa", "Doce", 20);
 
-  print(quantosDiasMadura(poolDays));
+  print("$f1 $f2");
 
-  mostrarMadura(name, poolDays, color: color);
+  mostrarMadura(f1.name, f1.poolDays, color: f1.color);
 }
 
 void mostrarMadura(String name, int days, {required String color}) {
@@ -19,6 +15,17 @@ void mostrarMadura(String name, int days, {required String color}) {
   }
 
   print("A $name é $color");
+}
+
+class Fruta {
+  String name;
+  double weight;
+  String color;
+  String taste;
+  int poolDays;
+  bool? isMature;
+
+  Fruta(this.name, this.weight, this.color,this.taste, this.poolDays, {this.isMature});
 }
 
 int quantosDiasMadura(int days) {
