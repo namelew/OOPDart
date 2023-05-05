@@ -9,16 +9,14 @@ void main(List<String> args) {
   mostrarMadura(name, poolDays, color: color);
 }
 
-void mostrarMadura(String name, int days, {String? color}) {
+void mostrarMadura(String name, int days, {String color = "Sem cor"}) {
   if (funcEstaMadura(days)) {
     print("A $name está madura");
   } else {
     print("A $name não está madura");
   }
 
-  if (color != null) {
-    print("A $name é $color");
-  }
+  print("A $name é $color");
 }
 
 bool funcEstaMadura(int days) {
