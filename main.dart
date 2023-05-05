@@ -6,15 +6,24 @@ void main(List<String> args) {
   f2.estaMadura(60);
 }
 
-class Fruta {
+class Alimento {
   String name;
   double weight;
   String color;
+
+  Alimento(this.name, this.weight, this.color);
+
+  void printAlimento() {
+    print("Este(a) $name pesa $weight gramas e é $color.");
+  }
+}
+
+class Fruta extends Alimento{
   String taste;
   int poolDays;
   bool? isMature;
 
-  Fruta(this.name, this.weight, this.color,this.taste, this.poolDays, {this.isMature});
+  Fruta(String name, double weight, String color,this.taste, this.poolDays, {this.isMature}) : super(name, weight, color);
 
   void estaMadura(int daysToMature) {
     this.isMature = this.poolDays >= daysToMature;
@@ -24,23 +33,24 @@ class Fruta {
       print("A sua ${this.name} foi colhida à ${this.poolDays} dias e está madura");
     }
   }
+
+  void fazerSuco() {
+    print("Você fez um ótimo suco de $name");
+  }
 }
 
-class Alimento {
-  String name;
-  double weight;
-  String color;
-
-  Alimento(this.name, this.weight, this.color);
-}
-
-class Legumes {
-  String name;
-  double weight;
-  String color;
+class Legumes extends Alimento{
   bool isNeedToCook;
 
-  Legumes(this.name, this.weight, this.color, this.isNeedToCook);
+  Legumes(String name, double weight, String color, this.isNeedToCook) : super(name, weight, color);
+
+  void cook() {
+    if(this.isNeedToCook) {
+      print("Pronto, o $name está cozinhando!");
+    } else {
+      print("Nem precisa cozinhar");
+    }
+  }
 }
 
 class Citricas {
