@@ -1,9 +1,17 @@
 void main(List<String> args) {
-  Fruta f1 = Fruta("Laranja", 100.2, "Verde e Amarela", "Doce e cítrica", 30);
-  Fruta f2 = Fruta("Uva", 40, "Roxa", "Doce", 20);
+  Legumes mandioca = Legumes("Mandioca", 1200, "Marrom", true);
+  Fruta banana = Fruta("Banana", 75, "Amarela", "Doce", 12);
+  Nozes macadamia = Nozes("Macadâmia", 2, "Branco Amarelado", "Doce", 20, 35);
+  Citricas limao = Citricas("Limão", 50, "Verde", "Azedo", 20, 9);
 
-  f1.estaMadura(30);
-  f2.estaMadura(60);
+  macadamia.printAlimento();
+  mandioca.printAlimento();
+  banana.printAlimento();
+  limao.printAlimento();
+
+  mandioca.cook();
+
+  limao.fazerSuco();
 }
 
 class Alimento {
