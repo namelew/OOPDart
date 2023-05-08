@@ -47,7 +47,7 @@ class Fruta extends Alimento{
   }
 }
 
-class Legumes extends Alimento{
+class Legumes extends Alimento implements Bolo{
   bool isNeedToCook;
 
   Legumes(String name, double weight, String color, this.isNeedToCook) : super(name, weight, color);
@@ -58,6 +58,21 @@ class Legumes extends Alimento{
     } else {
       print("Nem precisa cozinhar");
     }
+  }
+
+  @override
+  void grill() {
+    // TODO: implement grill
+  }
+
+  @override
+  void makeDough() {
+    // TODO: implement makeDough
+  }
+  
+  @override
+  void separateIngredients() {
+    // TODO: implement separateIngredients
   }
 }
 
@@ -79,4 +94,10 @@ class Nozes extends Fruta{
   double naturalOilPercent;
 
   Nozes(String name, double weight, String color, String taste, int poolDays, this.naturalOilPercent, {bool? isMature}) : super(name, weight, color, taste, poolDays, isMature: isMature);
+}
+
+abstract class Bolo {
+  void separateIngredients();
+  void makeDough();
+  void grill();
 }
