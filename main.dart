@@ -1,17 +1,9 @@
 void main(List<String> args) {
-  Legumes mandioca = Legumes("Mandioca", 1200, "Marrom", true);
   Fruta banana = Fruta("Banana", 75, "Amarela", "Doce", 12);
   Nozes macadamia = Nozes("Macadâmia", 2, "Branco Amarelado", "Doce", 20, 35);
-  Citricas limao = Citricas("Limão", 50, "Verde", "Azedo", 20, 9);
 
-  macadamia.printAlimento();
-  mandioca.printAlimento();
-  banana.printAlimento();
-  limao.printAlimento();
-
-  mandioca.cook();
-
-  limao.fazerSuco();
+  banana.separateIngredients();
+  macadamia.makeDough();
 }
 
 class Alimento {
@@ -26,7 +18,7 @@ class Alimento {
   }
 }
 
-class Fruta extends Alimento{
+class Fruta extends Alimento implements Bolo{
   String taste;
   int poolDays;
   bool? isMature;
@@ -44,6 +36,19 @@ class Fruta extends Alimento{
 
   void fazerSuco() {
     print("Você fez um ótimo suco de $name");
+  }
+
+  @override
+  void separateIngredients() {
+    print("Catar a $name");
+  }
+  @override
+  void makeDough() {
+    print("Misturar a fruta com farinha, açucar etc");
+  }
+  @override
+  void grill() {
+    print("Colocar no forno");
   }
 }
 
@@ -69,7 +74,7 @@ class Legumes extends Alimento implements Bolo{
   void makeDough() {
     // TODO: implement makeDough
   }
-  
+
   @override
   void separateIngredients() {
     // TODO: implement separateIngredients
@@ -94,6 +99,12 @@ class Nozes extends Fruta{
   double naturalOilPercent;
 
   Nozes(String name, double weight, String color, String taste, int poolDays, this.naturalOilPercent, {bool? isMature}) : super(name, weight, color, taste, poolDays, isMature: isMature);
+  @override
+  void makeDough() {
+    print("Tirar a casca");
+    // a chamada a função do pai é opcional
+    super.makeDough();
+  }
 }
 
 abstract class Bolo {
